@@ -4,35 +4,24 @@ import React from 'react'
 const App = () => {
   return (
     <View style ={{
-      flex :1,
-      // justifyContent: 'center', //kolom
-      // alignItems: 'center', //baris
-    }}>
-      <View style={{
-        flex:1,
+        flex :1,
         justifyContent: 'center',
         alignItems: 'center',
       }}>
       <View style={{
-        width:100,
+        width:250,
         height:100,
         backgroundColor:'red',
+        borderRadius : 20,
+        justifyContent : 'center'
       }}>
+        <Text style ={{
+          fontSize :20,
+          color : 'white',
+          textAlign : 'center',
+          fontWeight : 'bold'
+        }}>Login</Text>
       </View>
-    </View>
-    <View style={{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-    <View style={{
-        width:100,
-        height:100,
-        backgroundColor:'blue',
-        
-      }}>
-    </View>
-    </View>
     </View>
   )
 }
