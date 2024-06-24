@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 
+
 // const ButtonCostum = ({text,color}) => {
 //   return (
 //     <View style ={{
