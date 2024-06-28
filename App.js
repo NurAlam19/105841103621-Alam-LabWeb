@@ -1,61 +1,36 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
-import React from 'react'
+// Rest of the import statements
+import { useFonts } from 'expo-font';
+import {View, Text} from 'react-native'
 
-
-// const ButtonCostum = ({text,color}) => {
-//   return (
-//     <View style ={{
-//       backgroundColor : color,
-//       width : 250,
-//       height : 100,
-//       borderRadius : 10,
-//       justifyContent : 'center',
-//       marginBottom :10
-//     }}>
-//       <Text style ={{
-//         textAlign : 'center',
-//         color : 'white',
-//         fontSize : 30,
-//         fontWeight : 'bold',
-//       }}>
-//         {text}
-//       </Text>
-//     </View>
-//   )
-// }
-
-const TextInputCostum =({placeholder, color, typeKeybooard}) => {
-  return(
-    <TextInput  
-    placeholder={placeholder}
-    keyboardType={typeKeybooard}
-    style ={{
-      width :250,
-      height : 50,
-      borderColor : color,
-      borderWidth : 1,
-      borderRadius : 10,
-      marginBottom :10,
-      paddingLeft : 10
-    }}></TextInput>
-  )
-}
-
-const App = () => {
+export default function App() {
+  const [dapatFont] = useFonts({
+    'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroLight': require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroSemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+  });
+  if (!dapatFont) {
+    return <Text>Font tidak ditemukan.....</Text>
+  }
   return (
     <View style ={{
-      flex : 1,
+      flex :1,
       justifyContent : 'center',
       alignItems : 'center',
     }}>
-      <TextInputCostum placeholder = "Username" color = "red" />
-      <TextInputCostum placeholder = "Password" color = "red" />
-      <TextInputCostum placeholder = "Gmail" color = "red" />
-      {/* <ButtonCostum text = "LOGIN" color = "red" />
-      <ButtonCostum text = "LOGIN" color = "orange" />
-      <ButtonCostum text = "REGIS" color = "purple" /> */}
+      <Text style ={{
+        fontFamily : 'MetroBlack',
+      }}>Font Metropolis Black</Text>
+      <Text style ={{
+        fontFamily : 'MetroBold',
+      }}>Font Metropolis Bold</Text>
+      <Text style ={{
+        fontFamily : 'MetroLight',
+      }}>Font Metropolis Light</Text>
+      <Text style ={{
+        fontFamily : 'MetroSemiBold',
+      }}>Font Metropolis Bold</Text>
+      <Text>Ini Text Biasa</Text>
     </View>
-  )
+  );
 }
-
-export default App
