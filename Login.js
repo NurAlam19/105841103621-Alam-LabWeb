@@ -12,9 +12,9 @@ const TextInputCostum =({ placeholder,keyboardType}) => {
     style ={{
       width :320,
       height :60,
-      borderColor : 'red',
+      borderColor : 'gray',
       borderRadius :5,
-      borderWidth :1,
+      // borderWidth :1,
       marginBottom :5,
       paddingLeft :20,
       backgroundColor : 'white',
@@ -58,34 +58,28 @@ const App = () => {
 
   return (
     <View style ={styles.container}>
-      
       <View style ={styles.content}>
-        <Text style={styles.title}>Forgot Password</Text>
-        <Text  style ={{
-          fontSize : 13,
-          fontFamily : 'MetroMedium'
-        }}>Please, enter your email address. You will receive a link to create a new password via email.</Text>
+        <Text style={styles.title}>Login</Text>
         <View  style= {styles.form}>
           {/* <TextInputCostum placeholder="Name" typekeyboard="email-address"/> */}
           <TextInputCostum placeholder="Email" typekeyboard="email-address"/>
-          {/* <TextInputCostum placeholder="Password" typekeyboard="default"/> */}
+          <TextInputCostum placeholder="Password" typekeyboard="default"/>
           <View  style ={{
             justifyContent : 'flex-end',
             flexDirection : 'row',
             marginBottom : 10
           }}>
             <Text style ={{
-              fontSize :11,
-              textAlign :'center',
-              // marginLeft :150,
-              fontFamily : 'MetroMedium',
-              color: 'red',
-            }}>Not a valid email address. Should be your@email.com</Text>
+              fontSize :15,
+              textAlign :'flex-end',
+              marginLeft :150,
+              fontFamily : 'MetroMedium'
+            }}>Forgot your password?</Text>
           </View>
-          <ButtonCostum text = "SEND" color = "#C40C0C"/>
+          <ButtonCostum text = "LOGIN" color = "#C40C0C"/>
         </View>
       </View>
-      {/* <Text style ={{
+      <Text style ={{
         fontSize : 15,
         textAlign : 'center',
         fontFamily : 'MetroMedium'
@@ -97,7 +91,7 @@ const App = () => {
         <View style ={styles.logoContainer}>
           <Image source ={require('./assets/logo-facebook.webp')} style ={styles.logo}/>
         </View>
-      </View> */}
+      </View>
     </View>
   )
 }
@@ -118,7 +112,6 @@ const styles =StyleSheet.create({
   },
   title : {
     fontSize : 35,
-    justifyContent: 'center',
     // fontWeight : 'bold',
     marginBottom : 40,
     fontFamily : 'MetroBold'
