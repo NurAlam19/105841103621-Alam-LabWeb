@@ -55,13 +55,13 @@ const App = () => {
     if (!dapatFont) {
       return <Text>Font tidak ditemukan......</Text>
     }
-    
+
   return (
     <View style ={styles.container}>
       <View style ={styles.content}>
-        <Text style={styles.title}>Sing Up</Text>
+        <Text style={styles.title}>Login</Text>
         <View  style= {styles.form}>
-          <TextInputCostum placeholder="Name" typekeyboard="email-address"/>
+          {/* <TextInputCostum placeholder="Name" typekeyboard="email-address"/> */}
           <TextInputCostum placeholder="Email" typekeyboard="email-address"/>
           <TextInputCostum placeholder="Password" typekeyboard="default"/>
           <View  style ={{
@@ -72,11 +72,11 @@ const App = () => {
             <Text style ={{
               fontSize :15,
               textAlign :'flex-end',
-              marginLeft :130,
+              marginLeft :150,
               fontFamily : 'MetroMedium'
-            }}>Already have an account?</Text>
+            }}>Forgot your password?</Text>
           </View>
-          <ButtonCostum text = "SING UP" color = "#C40C0C"/>
+          <ButtonCostum text = "LOGIN" color = "#C40C0C"/>
         </View>
       </View>
       <Text style ={{
