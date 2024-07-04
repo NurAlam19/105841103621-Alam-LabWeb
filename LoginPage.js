@@ -46,7 +46,7 @@ const ButtonCostum =({text,color}) => {
 }
 
 
-const App = () => {
+const App = ({navigation}) => {
   // export default function App() {
     const [dapatFont]= useFonts({
       'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
@@ -69,12 +69,12 @@ const App = () => {
             flexDirection : 'row',
             marginBottom : 10
           }}>
-            <Text style ={{
-              fontSize :15,
-              textAlign :'flex-end',
-              marginLeft :150,
-              fontFamily : 'MetroMedium'
-            }}>Forgot your password?</Text>
+            <Text style={styles.ForgotPasswordText} onPress={() => navigation.navigate('Forgot Password')}
+              // fontSize :15,
+              // textAlign :'flex-end',
+              // marginLeft :150,
+              // fontFamily : 'MetroMedium'
+            >Forgot your password?</Text>
           </View>
           <ButtonCostum text = "LOGIN" color = "#C40C0C"/>
         </View>
@@ -120,6 +120,12 @@ const styles =StyleSheet.create({
     width : '100%',
     alignItems :'center',
     // fontFamily : 'MetroMedium'
+  },
+  ForgotPasswordText : {
+    fontSize :15,
+    textAlign :'flex-end',
+    marginLeft :150,
+    fontFamily : 'MetroMedium'
   },
   logoRow : {
     flexDirection : 'row',

@@ -46,7 +46,7 @@ const ButtonCostum =({text,color}) => {
 }
 
 
-const App = () => {
+const App = ({navigation}) => {
   // export default function App() {
     const [dapatFont]= useFonts({
       'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),

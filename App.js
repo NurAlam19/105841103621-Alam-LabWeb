@@ -9,10 +9,10 @@ import ForgotPasswordPage from './ForgotPasswordPage'
 function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button title = "Ke Halaman Login" onPress={() => navigation.navigate('Login')}/>
+      {/* <Text>Home Screen</Text> */}
+      {/* <Button title = "Ke Halaman Login" onPress={() => navigation.navigate('Login')}/> */}
       <Button title = "Ke Halaman Sing Up" onPress={() => navigation.navigate('Sing Up')}/>
-      <Button title = "Ke Halaman Forgot Password" onPress={() => navigation.navigate('Forgot Password')}/>
+      {/* <Button title = "Ke Halaman Forgot Password" onPress={() => navigation.navigate('Forgot Password')}/> */}
     </View>
   );
 }
@@ -23,10 +23,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="Sing Up" component={SingupPage} />
-        <Stack.Screen name="Forgot Password" component={ForgotPasswordPage} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Sing Up" component={SingupPage} options={{headerShown: false}}/>
+        <Stack.Screen name="Login" component={LoginPage} options={{headerShown: false}}/>
+        <Stack.Screen name="Forgot Password" component={ForgotPasswordPage} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
