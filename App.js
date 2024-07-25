@@ -14,6 +14,10 @@ import FavoriteAktif from './assets/icon/favorites-activated.png';
 import FavoriteInaktif from './assets/icon/favorites-inactive.png';
 import ProfilAktif from './assets/icon/profil-activated.png';
 import ProfilInaktif from './assets/icon/profil-inactive.png';
+import ShopPage from './ShopPage';
+import BagPage from './BagPage';
+import FavoritePage from './FavoritePage';
+import ProfilPage from './ProfilPage';
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
@@ -33,7 +37,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Shop"
-        component={HomeScreen}
+        component={ShopPage}
         options={{
           headerShown: false, tabBarIcon: ({ focused }) => (
             <Image
@@ -45,7 +49,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Bag"
-        component={HomeScreen}
+        component={BagPage}
         options={{
           headerShown: false, tabBarIcon: ({ focused }) => (
             <Image
@@ -57,7 +61,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Favorite"
-        component={HomeScreen}
+        component={FavoritePage}
         options={{
           headerShown: false, tabBarIcon: ({ focused }) => (
             <Image
@@ -69,7 +73,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profil"
-        component={HomeScreen}
+        component={ProfilPage}
         options={{
           headerShown: false, tabBarIcon: ({ focused }) => (
             <Image
@@ -88,8 +92,8 @@ function HomeScreen({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('Login')}
+        title="Ini Adalah Halaman Home"
+        onPress={() => navigation.navigate('Home')}
       />
     </View>
   );
@@ -103,6 +107,10 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={MyTabs} />
         <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="Shop" component={ShopPage} />
+        <Stack.Screen name="Bag" component={BagPage} />
+        <Stack.Screen name="Favorite" component={FavoritePage} />
+        <Stack.Screen name="Profil" component={ProfilPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
