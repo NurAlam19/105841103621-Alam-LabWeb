@@ -1,119 +1,36 @@
-import * as React from 'react';
-import { View, Text, Button, Image, TouchableOpacity, TouchableOpacityBase } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginPage from './LoginPage';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeAktif from './assets/icon/home-activated.png';
-import HomeInaktif from './assets/icon/home-inactive.png';
-import ShopAktif from './assets/icon/shop-activated.png';
-import ShopInaktif from './assets/icon/shop-inactive.png';
-import BagAktif from './assets/icon/bag-activated.png';
-import BagInaktif from './assets/icon/bag-inactive.png';
-import FavoriteAktif from './assets/icon/favorites-activated.png';
-import FavoriteInaktif from './assets/icon/favorites-inactive.png';
-import ProfilAktif from './assets/icon/profil-activated.png';
-import ProfilInaktif from './assets/icon/profil-inactive.png';
-import ShopPage from './ShopPage';
-import BagPage from './BagPage';
-import FavoritePage from './FavoritePage';
-import ProfilPage from './ProfilPage';
-
-const Tab = createBottomTabNavigator();
-function MyTabs() {
+import { StyleSheet, Text, View, TextInput } from 'react-native'
+import React, { useState } from 'react'
+import { Button } from 'react-native-web'
+const App = () => {
+  const [formLogin, setForm] = useState({
+    email: '',
+    password: ''
+  })
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          headerShown: false, tabBarIcon: ({ focused }) => (
-            <Image
-              source={focused ? HomeAktif : HomeInaktif}
-              style={{ width: 40, height: 40 }}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Shop"
-        component={ShopPage}
-        options={{
-          headerShown: false, tabBarIcon: ({ focused }) => (
-            <Image
-              source={focused ? ShopAktif : ShopInaktif}
-              style={{ width: 40, height: 40 }}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Bag"
-        component={BagPage}
-        options={{
-          headerShown: false, tabBarIcon: ({ focused }) => (
-            <Image
-              source={focused ? BagAktif : BagInaktif}
-              style={{ width: 40, height: 40 }}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Favorite"
-        component={FavoritePage}
-        options={{
-          headerShown: false, tabBarIcon: ({ focused }) => (
-            <Image
-              source={focused ? FavoriteAktif : FavoriteInaktif}
-              style={{ width: 40, height: 40 }}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profil"
-        component={ProfilPage}
-        options={{
-          headerShown: false, tabBarIcon: ({ focused }) => (
-            <Image
-              source={focused ? ProfilAktif : ProfilInaktif}
-              style={{ width: 40, height: 40 }}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Ini Adalah Halaman Home"
-        onPress={() => navigation.navigate('Home')}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Form Login</Text>
+      <View>
+        <Text>Email</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(hasil) => setForm({ ...formLogin, email: hasil })}
+          value={formLogin.email}
+        />
+        <Text>Password</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(text) => setForm({ ...formLogin, password: text })}
+          value={formLogin.password}
+        />
+        <View style={{ marginTop: 10 }}>
+          <Button title="Login" onPress={() => alert('Login')} />
+        </View>
+        <View>
+          <Text>Email: {formLogin.email}</Text>
+          <Text>Password: {formLogin.password}</Text>
+        </View>
+      </View>
     </View>
-  );
+  )
 }
-
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={MyTabs} />
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="Shop" component={ShopPage} />
-        <Stack.Screen name="Bag" component={BagPage} />
-        <Stack.Screen name="Favorite" component={FavoritePage} />
-        <Stack.Screen name="Profil" component={ProfilPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default App;
+export default App
